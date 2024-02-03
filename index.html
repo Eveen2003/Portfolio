@@ -5,6 +5,10 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0"> 
 	<title>My Portfolio</title> 
+	<!-- Add these lines to your existing head section -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 	<style>
 		body {
 		  font-family: Arial, sans-serif;
@@ -14,7 +18,41 @@
 		#visit-count {
 		  font-size: 24px;
 		  font-weight: bold;
-		}
+		}	
+		.cont {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f4f4f4;
+			}
+
+			.testimonial-container {
+			max-width: 600px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+
+			.testimonial {
+			margin-bottom: 20px;
+			}
+			.cont.heading{
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+			.testimonial img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			margin-right: 10px;
+			object-fit: cover;
+			}	
+		
+
 	  </style>
 	<link rel="stylesheet" href="style.css"> 
 	<link rel="stylesheet" href="responsive.css"> 
@@ -247,9 +285,21 @@ Python” with 88% score during Jul-Sep 2023
 					<p>Bairisarangapuram, 532242</p> 
 				</div> 
 			</div> 
-		</div> 
+		</div>  
 	</section> 
-	<h1>Welcome to My Website!</h1>
+	<!-- Add this container within the body of your HTML -->
+<section class="testimonials" id="testimonials">
+	<div class="cont">
+		<h1><center>Testimonials</center></h1>
+	   <div class="testimonial-container" id="testimonialContainer">
+		 <!-- Testimonials will be dynamically added here using JavaScript -->
+	 </div></div>
+  </section>
+  
+
+  
+	  
+	
 	<p>This website has been visited:</p>
 	<script>
 		// Function to update and display visit count
