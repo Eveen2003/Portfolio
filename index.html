@@ -5,6 +5,17 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0"> 
 	<title>My Portfolio</title> 
+	<style>
+		body {
+		  font-family: Arial, sans-serif;
+		  text-align: center;
+		  padding: 50px;
+		}
+		#visit-count {
+		  font-size: 24px;
+		  font-weight: bold;
+		}
+	  </style>
 	<link rel="stylesheet" href="style.css"> 
 	<link rel="stylesheet" href="responsive.css"> 
 </head> 
@@ -238,6 +249,23 @@ Python” with 88% score during Jul-Sep 2023
 			</div> 
 		</div> 
 	</section> 
+	<h1>Welcome to My Website!</h1>
+	<p>This website has been visited:</p>
+	<script>
+		// Function to update and display visit count
+		function updateVisitCount() {
+		  let count = localStorage.getItem('visitCount') || 0;
+		  count = parseInt(count) + 1;
+		  localStorage.setItem('visitCount', count);
+		  document.getElementById('visit-count').textContent = count;
+		}
+	
+		// Call the function on page load
+		window.onload = function() {
+		  updateVisitCount();
+		};
+	  </script>
+	<p id="visit-count">0</p>
 	<footer class="footer"> 
 		<div class="footer-content text-center"> 
 			<div class="social-links"> 
