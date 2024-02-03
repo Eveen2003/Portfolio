@@ -16,47 +16,30 @@ hamburger.addEventListener('click', function () {
 	} 
 });
 
+// Add this to your existing script.js or in a separate script file
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Sample testimonial data (you can replace this with real data from your backend)
-    const testimonialsData = [
-       
-     
-		{
-            name: "Hari Guruvu",
-            occupation: "student",
-            testimonial: "As an agile web developer, you can use testimonials to enhance your portfolio and resume.",
-            
-        },
-		{
-            name: "Muppidi Suryavenkata Bhavani Shankar",
-            occupation: "student",
-            testimonial: "Make sure the testimonials are presented as a social proof very early in your landing page. ",
-            
-        },
-    ];
+	const testimonials = document.querySelectorAll(".testimonial");
+	let currentTestimonialIndex = 0;
+  
+	function showTestimonial(index) {
+	  testimonials.forEach((testimonial, i) => {
+		testimonial.classList.remove("active");
+		if (i === index) {
+		  testimonial.classList.add("active");
+		}
+	  });
+	}
+  
+	function nextTestimonial() {
+	  currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+	  showTestimonial(currentTestimonialIndex);
+	}
+  
 
-    // Function to dynamically populate testimonials
-    function renderTestimonials() {
-        const testimonialContainer = document.getElementById("testimonialContainer");
+	setInterval(nextTestimonial, 1000);
+  
 
-        testimonialsData.forEach(testimonial => {
-            const testimonialDiv = document.createElement("div");
-            testimonialDiv.classList.add("testimonial");
-
-            testimonialDiv.innerHTML = `
-                
-                <div>
-                    <p>${testimonial.testimonial}</p>
-                    <cite>${testimonial.name}, <span>${testimonial.occupation}</span></cite>
-                </div>
-            `;
-
-            testimonialContainer.appendChild(testimonialDiv);
-        });
-    }
-
-    // Call the function to render testimonials
-    renderTestimonials();
-});
-
+	showTestimonial(currentTestimonialIndex);
+  });
+  
